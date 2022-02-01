@@ -1,4 +1,4 @@
-def k_means(X, Y, k=2):
+def k_means(X, Y, k=2, random_state=42):
     """This function will calculate and plot k-means clusters for two-dimensional data input as X and Y"""
     from matplotlib import pyplot as plt
     import random
@@ -9,6 +9,7 @@ def k_means(X, Y, k=2):
     ax[0].set_title('the data')
     ax[0].scatter(X, Y, c='k')
     all_pts = list(zip(X, Y))
+    random.seed(random_state)
     pts = random.sample(all_pts, k)
     arr_pts = np.array(pts)
     ax[1].set_title('initialize centroids')
